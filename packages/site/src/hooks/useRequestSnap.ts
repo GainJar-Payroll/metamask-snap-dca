@@ -1,7 +1,7 @@
-import { useMetaMaskContext } from './MetamaskContext';
-import { useRequest } from './useRequest';
-import { defaultSnapOrigin } from '../config';
-import type { Snap } from '../types';
+import { useMetaMaskContext } from "./MetamaskContext";
+import { useRequest } from "./useRequest";
+import { defaultSnapOrigin } from "../config";
+import type { Snap } from "../types";
 
 /**
  * Utility hook to wrap the `wallet_requestSnaps` method.
@@ -23,9 +23,9 @@ export const useRequestSnap = (
    */
   const requestSnap = async () => {
     const snaps = (await request({
-      method: 'wallet_requestSnaps',
+      method: "wallet_requestSnaps",
       params: {
-        [snapId]: version ? { version } : {},
+        [snapId]: {},
       },
     })) as Record<string, Snap>;
 

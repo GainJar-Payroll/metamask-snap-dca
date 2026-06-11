@@ -5,6 +5,11 @@ coverage/
 .cache/
 public/
 
+# Development
+packages/snap/.env
+packages/site/.env.production
+
+
 # Logs
 logs
 *.log

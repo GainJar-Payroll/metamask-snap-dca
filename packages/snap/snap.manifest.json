@@ -1,18 +1,18 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SkillWallet — AI-powered automated on-chain skill execution.",
   "proposedName": "SkillWallet",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "git+https://github.com/GainJar-Payroll/skillwallet-snap.git"
   },
   "source": {
-    "shasum": "65+35JfTJsotnDhXvqpMvzDqu5NgYdOpRmRODzqEcPc=",
+    "shasum": "qlxerGiAzR8np+PhetqQ904Sxl5gP4eGDswY/bUoutY=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
-        "iconPath": "public/logo-only.svg",
-        "packageName": "snap",
+        "iconPath": "images/logo-only.svg",
+        "packageName": "skillwallet-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }

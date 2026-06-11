@@ -1,15 +1,16 @@
 {
-  "name": "snap",
-  "version": "0.1.0",
+  "name": "skillwallet-snap",
+  "version": "0.1.1",
   "description": "SkillWallet — AI-powered automated on-chain skill execution.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "git+https://github.com/GainJar-Payroll/skillwallet-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "main": "./dist/bundle.js",
   "files": [
     "dist/",
+    "images/",
     "snap.manifest.json"
   ],
   "scripts": {

@@ -1,43 +1,154 @@
-# TypeScript Example Snap Front-end
+# SkillWallet Frontend
 
-This project was bootstrapped with [Gatsby](https://www.gatsbyjs.com/).
+The landing page and web interface for SkillWallet — a MetaMask Snap enabling users to install and execute AI-powered DCA (Dollar-Cost Averaging) skills for automated on-chain trading.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Snap Installation**: Connect MetaMask and install the SkillWallet Snap directly from the website.
+- **Skill Selection**: Browse and configure AI-Powered DCA, Custom Cron DCA, and USDC Inbound DCA skills.
+- **Real-time Status**: View installed skills, execution history, and active plans.
+- **Dark UI**: Modern dark theme with cyan/violet accent colors.
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
+### Prerequisites
+
+- Node.js >= 18.6.0
+- Yarn 3.2.1
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/GainJar-Payroll/skillwallet-snap.git
+cd skillwallet-snap
+
+# Install dependencies
+yarn install
+
+# Start development server
+yarn workspace site start
+```
+
 Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Development
 
-### `yarn build`
+### Project Structure
 
-Builds the app for production to the `public` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+packages/site/
+├── src/
+│   ├── pages/
+│   │   └── index.tsx              # Main landing page
+│   ├── components/
+│   │   ├── Header.tsx             # Sticky navigation header
+│   │   ├── Footer.tsx             # Footer with links
+│   │   ├── HeroSections.tsx       # Hero section
+│   │   ├── HowToUse.tsx           # How to install section
+│   │   ├── ListSkills.tsx         # Skills listing
+│   │   ├── ConfigureOptions.tsx   # Configuration section
+│   │   ├── Testimonials.tsx       # User testimonials
+│   │   ├── FAQ.tsx                # Frequently asked questions
+│   │   ├── Buttons.tsx            # MetaMask install buttons
+│   │   ├── Card.tsx               # Reusable card component
+│   │   ├── Toggle.tsx             # Theme toggle
+│   │   └── Toaster.tsx            # Error notification
+│   ├── hooks/
+│   │   ├── MetamaskContext.tsx    # MetaMask context provider
+│   │   ├── useMetaMask.ts         # MetaMask hook
+│   │   ├── useInvokeSnap.ts       # Snap invocation hook
+│   │   └── useRequestSnap.ts      # Snap request hook
+│   ├── config/
+│   │   ├── snap.ts                # Snap configuration
+│   │   └── theme.ts               # Theme configuration
+│   ├── utils/
+│   │   ├── metamask.ts            # MetaMask utilities
+│   │   ├── snap.ts                # Snap utilities
+│   │   └── button.ts              # Button utilities
+│   └── styles/
+│       ├── global.css             # Global styles (Tailwind)
+│       └── design-tokens.css      # Design tokens
+├── public/
+├── .env.development               # Development environment
+├── .env.production                # Production environment
+└── package.json
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Available Scripts
 
-See the section about [deployment](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/) for more information.
+```bash
+# Start development server
+yarn workspace site start
 
-## Environment variables
+# Build for production
+yarn workspace site build
 
-Gatsby has built-in support for loading environment variables into the browser and Functions. Loading environment variables into Node.js requires a small code snippet.
+# Clean build artifacts
+yarn workspace site clean
 
-In development, Gatsby will load environment variables from a file named `.env.development`. For builds, it will load from `.env.production`.
+# Lint code
+yarn workspace site lint
+```
 
-By default you can use the `SNAP_ORIGIN` variable (used in `src/config/snap.ts`) to define a production origin for you snap (eg. `npm:MyPackageName`). If not defined it will defaults to `local:http://localhost:8080`.
+## Environment Variables
 
-A `.env` file template is available, to use it rename `.env.production.dist` to `.env.production`
+### SNAP_ORIGIN (Required)
 
-To learn more visit [Gatsby documentation](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/)
+The snap origin to connect to. Used in `src/config/snap.ts`.
 
-## Learn More
+| Environment | Value | Description |
+|-------------|-------|-------------|
+| Development | `local:http://localhost:8080` | Local hosted snap |
+| Production | `npm:skillwallet-snap` | Published npm package |
 
-You can learn more in the [Gatsby documentation](https://www.gatsbyjs.com/docs/).
+### Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Copy `.env.production.dist` to `.env.production`:
+   ```bash
+   cp .env.production.dist .env.production
+   ```
+
+2. Update the values in `.env.production`:
+   ```env
+   SNAP_ORIGIN=npm:skillwallet-snap
+   ```
+
+### Gatsby Environment Loading
+
+- **Development**: Loads from `.env.development`
+- **Production**: Loads from `.env.production`
+
+For more details, visit [Gatsby Environment Variables](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/).
+
+## Deployment
+
+### Build for Production
+
+```bash
+# Set environment variables
+export SNAP_ORIGIN=npm:skillwallet-snap
+
+# Build the site
+yarn workspace site build
+```
+
+The build output will be in the `public/` folder.
+
+### Deploy Options
+
+- **Netlify**: Connect your GitHub repo and set build command to `yarn workspace site build`
+- **Vercel**: Import the project and set root directory to `packages/site`
+- **GitHub Pages**: Use GitHub Actions to build and deploy
+- **Manual**: Upload the `public/` folder to any static hosting service
+
+## Tech Stack
+
+- **Framework**: Gatsby 5
+- **Styling**: Tailwind CSS 4 + Styled Components
+- **Blockchain**: viem, @metamask/smart-accounts-kit
+- **Snap SDK**: @metamask/snaps-sdk
+
+## License
+
+This project is licensed under the terms of the MIT-0 License (See [LICENSE](https://github.com/MetaMask/template-snap-monorepo/blob/main/LICENSE) file for details). This project also includes code from the MetaMask template monorepo which is licensed under the Apache-2.0 License.
