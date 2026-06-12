@@ -108,7 +108,7 @@ Set this in your `.env` file or export it in your shell.
 
 ### AI-Powered DCA
 
-- Uses Venice AI market analysis before each swap
+- Uses  AI market analysis before each swap
 - Fetches crypto news via x402 OttoAI
 - Analyzes sentiment with Venice AI
 - Stores AI market context with each execution
@@ -157,14 +157,14 @@ cd packages/snap
 npm publish --access=public
 ```
 
-The snap will be available at: `https://www.npmjs.com/package/skillwallet-snap`
+The snap will be available at: `https://www.npmjs.com/package/@gainjar/skillwallet-snap`
 
 ### Snap ID
 
 After publishing, users can install your snap using:
 
 ```
-npm:skillwallet-snap
+npm:@gainjar/skillwallet-snap
 ```
 
 ## Permissions

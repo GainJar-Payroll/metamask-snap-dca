@@ -32,6 +32,11 @@ SkillWallet allows users to configure and execute DCA strategies using AI-driven
 ## Configuration
 ### Environment Variables
 - `API_URL`: API Backend URL For executing cronjob and fetching data default (http://localhost:4000).
+- `SNAP_ORIGIN`: The origin of the Snap default (local:http://localhost:8080)
+
+
+For the backend repository you can refers to [https://github.com/GainJar-Payroll/skillwallet-api](https://github.com/GainJar-Payroll/skillwallet-api)
+For production snap already available at: `https://www.npmjs.com/package/@gainjar/skillwallet-snap`
 
 ### Skill Parameters
 - `outputToken`: Token to accumulate (WETH or cbBTC).
@@ -48,11 +53,18 @@ SkillWallet allows users to configure and execute DCA strategies using AI-driven
 4. Push to the branch.
 5. Create a Pull Request.
 
+## Detailed Readme
+
+For detailed snap instructions, refer to the [README.md](https://github.com/GainJar-Payroll/skillwallet-snap/blob/main/packages/snap/README.md) file in the repository.
+For detailed site instructions, refer to the [README.md](https://github.com/GainJar-Payroll/skillwallet-snap/blob/main/packages/site/README.md) file in the repository.
+
+
 ## License
 This project is licensed under the terms of the MIT-0 License (See [LICENSE](https://github.com/MetaMask/template-snap-monorepo/blob/main/LICENSE) file for details). This project also includes code from the MetaMask template monorepo which is licensed under the Apache-2.0 License.
 
 ## Contact
 For questions or support, discuss here https://github.com/GainJar-Payroll/skillwallet-snap/discussions.
+
 ## Acknowledgments
 - MetaMask for the Snap platform.
 - AI and DeFi communities for inspiration

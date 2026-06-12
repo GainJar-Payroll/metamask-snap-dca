@@ -93,26 +93,19 @@ yarn workspace site lint
 
 ## Environment Variables
 
-### SNAP_ORIGIN (Required)
+The site requires the following environment variable:
+
+```bash
+# SNAP_ORIGIN For connecting to the snap
+SNAP_ORIGIN=local:http://localhost:8080
+```
 
 The snap origin to connect to. Used in `src/config/snap.ts`.
 
 | Environment | Value | Description |
 |-------------|-------|-------------|
 | Development | `local:http://localhost:8080` | Local hosted snap |
-| Production | `npm:skillwallet-snap` | Published npm package |
-
-### Setup
-
-1. Copy `.env.production.dist` to `.env.production`:
-   ```bash
-   cp .env.production.dist .env.production
-   ```
-
-2. Update the values in `.env.production`:
-   ```env
-   SNAP_ORIGIN=npm:skillwallet-snap
-   ```
+| Production | `npm:@gainjar/skillwallet-snap` | Published npm package |
 
 ### Gatsby Environment Loading
 
@@ -127,7 +120,7 @@ For more details, visit [Gatsby Environment Variables](https://www.gatsbyjs.com/
 
 ```bash
 # Set environment variables
-export SNAP_ORIGIN=npm:skillwallet-snap
+export SNAP_ORIGIN=npm:@gainjar/skillwallet-snap
 
 # Build the site
 yarn workspace site build
